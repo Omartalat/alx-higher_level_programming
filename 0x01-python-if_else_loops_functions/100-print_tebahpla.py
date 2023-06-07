@@ -5,4 +5,3 @@ for i in range(ord('z'), ord('a') - 1, -1):
     else:
         x = i
     print("{}".format(chr(x)), end="")
-       
