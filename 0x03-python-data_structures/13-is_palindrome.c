@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * palindrome - check if is palindrome with recursion created by Omartalat
+ * palindrome - check if is palindrome with recursion created by Omar
  * @l: l
  * @r: r
  *
@@ -26,7 +26,7 @@ int palindrome(listint_t **l, listint_t *r)
 }
 
 /**
- * is_palindrome - checks if a singly linked list is a palindrome Omartalat
+ * is_palindrome - checks if a singly linked list is a palindrome 
  * @head: head of linked list
  *
  * Return: 1 palindrome, 0 not palindrome
