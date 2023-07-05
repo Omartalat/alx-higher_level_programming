@@ -1,5 +1,18 @@
 #!/usr/bin/python3
+"""Module built for Python 0x07 task 0.
+"""
+
+
 def add_integer(a, b=98):
+    """Function that adds two integers.
+
+    Args:
+        a ((int, (float)): first arg to add to sum.
+        b ((int, (float)): second arg to add to sum. Defaults to 98.
+
+    Returns: sum of both values.
+
+    """
     if not isinstance(a, (int, float)):
         raise TypeError('a must be an integer')
     if not isinstance(b, (int, float)):
