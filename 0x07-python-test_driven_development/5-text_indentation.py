@@ -6,7 +6,7 @@ advances file numbering +1 for every task after 0.
 
 def text_indentation(text):
     """Function that prints text with 2 new lines after each of the \
-    characters '.',',', and '?' :
+    characters ".", ",", and '?' :
 
     Args:
         text (str): text to be edited
@@ -19,7 +19,7 @@ def text_indentation(text):
         raise TypeError('text must be a string')
     for char in text:
         if char in punctuation_marks:
-            new_text += current_line.strip() + '\n\n'
+            new_text += current_line.strip() + f'{char}\n\n'
             current_line = ""
         else:
             current_line += char
