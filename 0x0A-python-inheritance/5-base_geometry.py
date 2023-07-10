@@ -6,7 +6,6 @@ Module with BaseGeometry class
 """
 
 
-
 class BaseGeometry:
     """
     an empty class BaseGeometry.

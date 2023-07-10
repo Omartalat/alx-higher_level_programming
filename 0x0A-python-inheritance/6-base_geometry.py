@@ -6,7 +6,6 @@ Module with BaseGeometry class
 """
 
 
-
 class BaseGeometry:
     """
      a class BaseGeometry with Public instance method: area
