@@ -1,46 +1,87 @@
 #!/usr/bin/python3
 """
-script that reads stdin line by line and computes metrics
+module contains
+class Metrics
+script, to handle class
 """
 import sys
-from collections import defaultdict
 
 
-def print_statistics(total_size, status_counts):
+class Metrics:
     """
-    function named print_statistics to print the computed metrics
+    metrics class to handle holding and display of information
+relating to th e
     """
-    print(f"Total file size: {total_size}")
-    for status_code in sorted(status_counts.keys()):
-        count = status_counts[status_code]
-        print(f"{status_code}: {count}")
+    #change variable names to be more readable
+    eCodes = ['200', '301', '400', '401', '403', '404', '405', '500']
+
+    def __init__(self):
+        """
+        init for metrics class
+        sets all attributes to 0(zero) at start
+        """
+        self.total_size = 0
+        self.lineCount = 0
+        for code in self.eCodes:
+            #store values in a dictionary
+            setattr(self, self.code_to_attr(code), 0)
+
+    def __str__(self):
+        """
+        informal string for printing data
+        """
+        #ensure variable naming conventions match
+        retStr = f"File size: {self.total_size}\n"
+        for code in self.eCodes:
+            value = getattr(self, self.code_to_attr(code))
+            if value == 0:
+                continue
+            #change add newline to here
+            retStr += f"{code}: {getattr(self, self.code_to_attr(code))}\n"
+        #remove this line to avoid "segmentation faults"
+        retStr = retStr[:-1]
+        return (retStr)
+
+    def code_check(self, Code, size):
+        """
+        checks if attribute exists and updates fields if required
+        Name to be more specific with naming, Method is incrementing not checking.
+        """
+        #varaible names need to state purpose
+        if Code in self.eCodes:
+            try:
+                self.total_size += int(size)
+                value = getattr(self, self.code_to_attr(Code)) + 1
+                setattr(self, self.code_to_attr(Code), value)
+            except Exception:
+                #need more specification.
+                return
+        else:
+            return
+
+    def code_to_attr(self, Code):
+        """
+        converts an error code into a string rep of the
+        corrisponding attribute
+        """
+        fullAttr = "e" + Code
+        return (fullAttr)
 
 
-def process_input():
-    """
-    function named process_input to read input, compute metrics
-    and print statistics
-    """
-    total_size = 0
-    status_counts = defaultdict(int)
-    line_count = 0
-
-    try:
-        for line in sys.stdin:
-            line_count += 1
-            parts = line.split()
-            if len(parts) >= 6:
-                size = int(parts[-1])
-                status_code = parts[-2]
-                total_size += size
-                status_counts[status_code] += 1
-
-            if line_count % 10 == 0:
-                print_statistics(total_size, status_counts)
-
-    except KeyboardInterrupt:
-        print_statistics(total_size, status_counts)
-
-
-if __name__ == "__main__":
-    process_input()
+info = Metrics()
+try:
+    currLine = sys.stdin.readline()
+    info.lineCount += 1
+    while currLine != "":
+        tokens = currLine.split()
+        if len(tokens) < 2:
+            currLine = sys.stdin.readline()
+            continue
+        info.code_check(tokens[-2], tokens[-1])
+        if (info.lineCount % 10) == 0:
+            print(info)
+        currLine = sys.stdin.readline()
+        info.lineCount += 1
+    print(info)
+except KeyboardInterrupt:
+    print(info)
