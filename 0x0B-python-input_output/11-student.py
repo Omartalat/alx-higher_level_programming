@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """
-Module with a class Student that defines a student
+Defines Student class
 """
 
 
-class Student:
+class Student():
     """
-    class Student that defines a student
+        A Student class
     """
-    def __int__(self, first_name, last_name, age):
+    def __init__(self, first_name, last_name, age):
         """
-        Instantiation with first_name, last_name and age
+            defines first_name, last_name, age
         """
         self.first_name = first_name
         self.last_name = last_name
@@ -18,15 +18,16 @@ class Student:
 
     def to_json(self, attrs=None):
         """
-        retrieves a dictionary representation of a Student instance
+            retrieves a dictionary representation
+            of a Student instance
         """
         if type(attrs) is list and all([type(s) == str for s in attrs]):
             return {k: v for k, v in self.__dict__.items() if k in attrs}
-        return self.__dict__
+        return(self.__dict__)
 
     def reload_from_json(self, json):
         """
-        replaces all attributes of the Student instance
+            reload json object
         """
-        for k, v in json.item():
+        for k, v in json.items():
             self.__dict__[k] = v
