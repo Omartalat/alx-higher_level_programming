@@ -50,7 +50,7 @@
 | Task | File |
 | ---- | ---- |
 | 0. If it's not tested it doesn't work | [tests/](./tests/) |
-| 1. Base class | [models/base.py, models/__init__.py](./models/base.py, models/__init__.py) |
+| 1. Base class | [models/base.py](./models/base.py), [models/__init__.py](./models/__init__.py) |
 | 2. First Rectangle | [models/rectangle.py](./models/rectangle.py) |
 | 3. Validate attributes | [models/rectangle.py](./models/rectangle.py) |
 | 4. Area first | [models/rectangle.py](./models/rectangle.py) |
