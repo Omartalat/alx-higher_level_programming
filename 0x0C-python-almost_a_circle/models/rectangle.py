@@ -89,10 +89,13 @@ class Rectangle(Base):
         """
         prints in stdout the Rectangle instance with the character #
         """
+        for i in range(self.__y):
+            print('')
         for i in range(self.__height):
+            row_offset = " " * self.__x
             for j in range(self.__width):
-                print("#", end='')
-            print("")
+                row_offset += '#'
+            print('{}'.format(row_offset))
 
     def __str__(self):
         """
