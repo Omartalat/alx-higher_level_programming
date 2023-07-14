@@ -121,14 +121,14 @@ class Rectangle(Base):
                     self.__x = arg
                 if i == 4:
                     self.__y = arg
-        if kwargs:
-            for k in kwargs:
-                if k == 'width':
-                    self.__width = kwargs[k]
-                if k == 'height':
-                    self.__height = kwargs[k]
-                if k == 'x':
-                    self.__x = kwargs[k]
-                if k == 'y':
-                    self.__y = kwargs[k]
-
+        else:
+            if kwargs:
+                for k in kwargs:
+                    if k == 'width':
+                        self.__width = kwargs[k]
+                    if k == 'height':
+                        self.__height = kwargs[k]
+                    if k == 'x':
+                        self.__x = kwargs[k]
+                    if k == 'y':
+                        self.__y = kwargs[k]

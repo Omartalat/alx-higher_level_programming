@@ -12,9 +12,11 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Class constructor"""
         super().__init__(size, size, x, y, id)
+
     def __str__(self):
-        return '[Square] ({}) {}/{} - {}'.format(self.id, self.x, self.y, self.width)
-    
+        return '[Square] ({}) {}/{} - {}'.format(self.id, self.x,
+                                                 self.y, self.width)
+
     @property
     def size(self):
         """
@@ -29,3 +31,29 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """
+        assigns an argument to each attribute
+        """
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                if i == 1:
+                    self.size = arg
+                if i == 2:
+                    self.x = arg
+                if i == 3:
+                    self.y = arg
+        else:
+            if kwargs:
+                for k in kwargs:
+                    if k == 'id':
+                        self.id = kwargs[k]
+                    if k == 'size':
+                        self.size = kwargs[k]
+                    if k == 'x':
+                        self.x == kwargs[k]
+                    if k == 'y':
+                        self.y = kwargs[k]
