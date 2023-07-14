@@ -54,6 +54,6 @@ class Square(Rectangle):
                     if k == 'size':
                         self.size = kwargs[k]
                     if k == 'x':
-                        self.x == kwargs[k]
+                        self.x = kwargs[k]
                     if k == 'y':
                         self.y = kwargs[k]
