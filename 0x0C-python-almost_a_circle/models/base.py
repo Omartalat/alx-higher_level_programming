@@ -40,5 +40,5 @@ class Base:
             if not list_objs:
                 json_file.write("[]")
             else:
-                list_dicts = [obj.to_dictionary() for obj in list_objs]
-                json_file.write(Base.to_json_string(list_dicts))
+                dict_list = [obj.to_dictionary() for obj in list_objs]
+                json_file.write(cls.to_json_string(dict_list))
