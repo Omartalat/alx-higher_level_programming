@@ -42,3 +42,28 @@ class Base:
             else:
                 dict_list = [obj.to_dictionary() for obj in list_objs]
                 json_file.write(cls.to_json_string(dict_list))
+    def from_json_string(json_string):
+        if not json_string or json_string == "[]":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        returns an instance with all attributes already set
+        """
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+    
+    @classmethod
+    def load_from_file(cls):
+        with open(f'{cls.__name__}.json', 'r') as f:
+            if not f:
+                return []
+            else:
+                list_dicts = Base.from_json_string(f.read())
+                return [cls.create(**dicts) for dicts in list_dicts]

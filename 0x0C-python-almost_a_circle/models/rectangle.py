@@ -123,16 +123,8 @@ class Rectangle(Base):
                     self.__y = arg
         else:
             if kwargs:
-                for k in kwargs:
-                    if k == 'width':
-                        self.__width = kwargs[k]
-                    if k == 'height':
-                        self.__height = kwargs[k]
-                    if k == 'x':
-                        self.__x = kwargs[k]
-                    if k == 'y':
-                        self.__y = kwargs[k]
-
+                for k, v in kwargs.items():
+                    setattr(self, k, v)
     def to_dictionary(self):
         dic = {}
         dic['x'] = self.x
