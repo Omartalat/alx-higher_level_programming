@@ -112,7 +112,10 @@ class Rectangle(Base):
         if args:
             for i, arg in enumerate(args):
                 if i == 0:
-                    self.id = arg
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
                 if i == 1:
                     self.__width = arg
                 if i == 2:
