@@ -2,6 +2,7 @@
 """
 Defines unittests for base.py
 """
+import json
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -51,7 +52,7 @@ class TestBaseInstantiation(unittest.TestCase):
             Square.save_to_file(lS)
             lS2 = Square.load_from_file()
             self.assertNotEqual(lS, lS2)
-     def test_from_json_string(self):
+    def test_from_json_string(self):
         """
         Test check from json string
         """
