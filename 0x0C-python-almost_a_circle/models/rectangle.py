@@ -7,6 +7,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Class Rectangle inherits from Base"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Class constructor"""
         super().__init__(id)
@@ -105,6 +106,7 @@ class Rectangle(Base):
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.__x,
                                                        self.__y, self.__width,
                                                        self.__height)
+
     def update(self, *args, **kwargs):
         """
         assigns an argument to each attribute
@@ -113,7 +115,8 @@ class Rectangle(Base):
             for i, arg in enumerate(args):
                 if i == 0:
                     if arg is None:
-                        self.__init__(self.__width, self.__height, self.__x, self.__y)
+                        self.__init__(self.__width, self.__height,
+                                      self.__x, self.__y)
                     else:
                         self.id = arg
                 if i == 1:
@@ -128,6 +131,7 @@ class Rectangle(Base):
             if kwargs:
                 for k, v in kwargs.items():
                     setattr(self, k, v)
+
     def to_dictionary(self):
         dic = {}
         dic['x'] = self.x
