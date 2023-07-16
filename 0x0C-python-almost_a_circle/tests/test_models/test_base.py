@@ -13,6 +13,7 @@ class TestBaseInstantiation(unittest.TestCase):
     """
     Unittests for testing Base class.
     """
+
     def test_id_none(self):
         """
         Unittests for testing instantiation of the Base class.
@@ -21,7 +22,7 @@ class TestBaseInstantiation(unittest.TestCase):
         b2 = Base()
         b3 = Base()
         self.assertEqual(b1.id, b2.id - 1)
-        self.assertEqual(b1.id, b3.id -2)
+        self.assertEqual(b1.id, b3.id - 2)
         self.assertEqual(b2.id, b3.id - 1)
 
     def test_to_json_string(self):
@@ -43,15 +44,16 @@ class TestBaseInstantiation(unittest.TestCase):
         self.assertNotEqual(lR, lR2)
 
     def test_file_square(self):
-            """
-            Test check if file loads from square
-            """
-            S1 = Square(22)
-            S2 = Square(44, 44, 55, 66)
-            lS = [S1, S2]
-            Square.save_to_file(lS)
-            lS2 = Square.load_from_file()
-            self.assertNotEqual(lS, lS2)
+        """
+        Test check if file loads from square
+        """
+        S1 = Square(22)
+        S2 = Square(44, 44, 55, 66)
+        lS = [S1, S2]
+        Square.save_to_file(lS)
+        lS2 = Square.load_from_file()
+        self.assertNotEqual(lS, lS2)
+
     def test_from_json_string(self):
         """
         Test check from json string
@@ -72,5 +74,3 @@ class TestBaseInstantiation(unittest.TestCase):
                                                                '"id": 1, '
                                                                '"height": 7, '
                                                                '"y": 8}]'))
-
-

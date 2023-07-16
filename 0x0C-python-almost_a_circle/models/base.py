@@ -24,7 +24,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     def to_json_string(list_dictionaries):
         """
         JSON representation of a list of dictionaries
@@ -42,6 +42,7 @@ class Base:
             else:
                 dict_list = [obj.to_dictionary() for obj in list_objs]
                 json_file.write(cls.to_json_string(dict_list))
+
     def from_json_string(json_string):
         if not json_string or json_string == "[]":
             return []
@@ -58,7 +59,7 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
-    
+
     @classmethod
     def load_from_file(cls):
         """

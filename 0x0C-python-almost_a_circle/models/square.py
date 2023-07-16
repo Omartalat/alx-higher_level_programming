@@ -9,6 +9,7 @@ class Square(Rectangle):
     """
     class Square that inherits from Rectangle
     """
+
     def __init__(self, size, x=0, y=0, id=None):
         """Class constructor"""
         super().__init__(size, size, x, y, id)
@@ -57,14 +58,14 @@ class Square(Rectangle):
                         self.x = kwargs[k]
                     if k == 'y':
                         self.y = kwargs[k]
-    
+
     def to_dictionary(self):
         """
         returns the dictionary representation of a Square
         """
-        dic = {}
-        dic['id'] = self.id
-        dic['x'] = self.x
-        dic['size'] = self.width
-        dic['y'] = self.y
-        return dic
+        dictionary = {}
+        dictionary['id'] = self.id
+        dictionary['x'] = self.x
+        dictionary['size'] = self.width
+        dictionary['y'] = self.y
+        return dictionary
