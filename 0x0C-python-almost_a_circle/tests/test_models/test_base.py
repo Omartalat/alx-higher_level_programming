@@ -72,12 +72,5 @@ class TestBaseInstantiation(unittest.TestCase):
                                                                '"id": 1, '
                                                                '"height": 7, '
                                                                '"y": 8}]'))
-        
-class TestRectangleInstantiation(unittest.TestCase):
-    """
-    Unittests for testing instantiation of the Rectangle class.
-    """
-    def test_inheritance(self):
-        self.assertTrue(issubclass(Rectangle, Base))
 
 
