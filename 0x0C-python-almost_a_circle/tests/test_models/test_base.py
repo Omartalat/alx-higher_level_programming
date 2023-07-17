@@ -74,3 +74,6 @@ class TestBaseInstantiation(unittest.TestCase):
                                                                '"id": 1, '
                                                                '"height": 7, '
                                                                '"y": 8}]'))
+
+if __name__ == "__main__":
+    unittest.main()
