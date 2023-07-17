@@ -86,4 +86,5 @@ class TestRectangleClass(unittest.TestCase):
         rect = Rectangle(20, 12, 3, 5, 6)
         r1_dictionary = rect.to_dictionary()
         self.assertEqual(
-            r1_dictionary, {'x': 3, 'y': 5, 'id': 6, 'height': 12, 'width': 20})
+            r1_dictionary, {'x': 3, 'y': 5, 'id': 6, 'height': 12,
+                            'width': 20})
