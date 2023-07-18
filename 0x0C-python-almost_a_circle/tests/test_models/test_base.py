@@ -13,17 +13,32 @@ class TestBase_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Base class."""
 
     def test_no_arg(self):
+        """
+        test_no_arg:
+            Description: This test ensures that two instances of the Base class created without any arguments have consecutive id values.
+            Purpose: Verify that the id attribute of Base instances increments correctly when no arguments are provided during instantiation.
+        """
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
     def test_three_bases(self):
+        """
+        test_three_bases:
+            Description: This test verifies that three instances of the Base class have consecutive id values.
+            Purpose: Confirm that the id attribute of Base instances increments correctly when multiple instances are created.
+        """
         b1 = Base()
         b2 = Base()
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 2)
 
     def test_None_id(self):
+        """
+        test_None_id:
+            Description: This test checks if two instances of the Base class created with None as an argument have consecutive id values.
+            Purpose: Ensure that the id attribute of Base instances increments correctly when None is provided as an argument during instantiation.
+        """
         b1 = Base(None)
         b2 = Base(None)
         self.assertEqual(b1.id, b2.id - 1)
