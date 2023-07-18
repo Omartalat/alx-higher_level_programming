@@ -43,6 +43,9 @@ class Base:
                 json_file.write(cls.to_json_string(dict_list))
 
     def from_json_string(json_string):
+        """
+        from_json_string
+        """
         if not json_string or json_string == "[]":
             return []
         return json.loads(json_string)
