@@ -36,17 +36,30 @@ class TestBase_instantiation(unittest.TestCase):
     def test_None_id(self):
         """
         test_None_id:
-            Description: This test checks if two instances of the Base class created with None as an argument have consecutive id values.
-            Purpose: Ensure that the id attribute of Base instances increments correctly when None is provided as an argument during instantiation.
+            Description: This test checks if two instances of the Base class
+                         created with None as an argument have consecutive 
+                         id values.
+            Purpose: Ensure that the id attribute of Base instances increments
+                     correctly when None is provided as an argument 
+                     during instantiation.
         """
         b1 = Base(None)
         b2 = Base(None)
         self.assertEqual(b1.id, b2.id - 1)
 
     def test_unique_id(self):
+        """
+        test_unique_id:
+            Description: This test validates that an instance
+                         of the Base class created with a unique id value
+                         returns the same id value.
+            Purpose: Verify that the id attribute of Base instances
+                     correctly reflects the provided unique id value.
+        """
         self.assertEqual(12, Base(12).id)
 
     def test_nb_instances_after_unique_id(self):
+
         b1 = Base()
         b2 = Base(12)
         b3 = Base()
