@@ -14,7 +14,8 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_no_arg(self):
         """
-        Test case to ensure that two instances of the Base class created without any arguments have consecutive id values.
+        Test case to ensure that two instances of the Base class
+        created without any arguments have consecutive id values.
         """
         b1 = Base()
         b2 = Base()
@@ -22,7 +23,8 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_three_bases(self):
         """
-        Test case to verify that three instances of the Base class have consecutive id values.
+        Test case to verify that three instances of the Base class
+        have consecutive id values.
         """
         b1 = Base()
         b2 = Base()
@@ -31,7 +33,8 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_None_id(self):
         """
-        Test case to check if two instances of the Base class created with None as an argument have consecutive id values.
+        Test case to check if two instances of the Base class created
+        with None as an argument have consecutive id values.
         """
         b1 = Base(None)
         b2 = Base(None)
@@ -39,13 +42,15 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_unique_id(self):
         """
-        Test case to validate that an instance of the Base class created with a unique id value returns the same id value.
+        Test case to validate that an instance of the Base class created
+        with a unique id value returns the same id value.
         """
         self.assertEqual(12, Base(12).id)
 
     def test_nb_instances_after_unique_id(self):
         """
-        Test case to verify the number of instances created after an instance of the Base class with a unique id.
+        Test case to verify the number of instances created
+        after an instance of the Base class with a unique id.
         """
         b1 = Base()
         b2 = Base(12)
@@ -54,7 +59,8 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_id_public(self):
         """
-        Test case to check if the id attribute of an instance of the Base class can be modified.
+        Test case to check if the id attribute of
+        an instance of the Base class can be modified.
         """
         b = Base(12)
         b.id = 15
@@ -62,115 +68,150 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_nb_instances_private(self):
         """
-        Test case to confirm that accessing the __nb_instances attribute of the Base class raises an AttributeError.
+        Test case to confirm that accessing the __nb_instances
+        attribute of the Base class raises an AttributeError.
         """
         with self.assertRaises(AttributeError):
             print(Base(12).__nb_instances)
 
     def test_str_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with a string argument is the same as the input string.
+        Test case to validate that the id attribute of an instance of
+        the Base class created with a string argument is the same
+        as the input string.
         """
         self.assertEqual("hello", Base("hello").id)
 
     def test_float_id(self):
         """
-        Test case to verify that the id attribute of an instance of the Base class created with a float argument is the same as the input float.
+        Test case to verify that the id attribute of an instance of
+        the Base class created with a float argument is
+        the same as the input float.
         """
         self.assertEqual(5.5, Base(5.5).id)
 
     def test_complex_id(self):
         """
-        Test case to ensure that the id attribute of an instance of the Base class created with a complex number argument is the same as the input complex number.
+        Test case to ensure that the id attribute of an instance of
+        the Base class created with a complex number argument is
+        the same as the input complex number.
         """
         self.assertEqual(complex(5), Base(complex(5)).id)
 
     def test_dict_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with a dictionary argument is the same as the input dictionary.
+        Test case to validate that the id attribute of an instance of
+        the Base class created with a dictionary argument is the same
+        as the input dictionary.
         """
         self.assertEqual({"a": 1, "b": 2}, Base({"a": 1, "b": 2}).id)
 
     def test_bool_id(self):
         """
-        Test case to verify that the id attribute of an instance of the Base class created with a boolean argument is the same as the input boolean.
+        Test case to verify that the id attribute of an instance of
+        the Base class created with a boolean argument is the same
+        as the input boolean.
         """
         self.assertEqual(True, Base(True).id)
 
     def test_list_id(self):
         """
-        Test case to check if the id attribute of an instance of the Base class created with a list argument is the same as the input list.
+        Test case to check if the id attribute of an instance of
+        the Base class created with a list argument is the same
+        as the input list.
         """
         self.assertEqual([1, 2, 3], Base([1, 2, 3]).id)
 
     def test_tuple_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with a tuple argument is the same as the input tuple.
+        Test case to validate that the id attribute of an instance of
+        the Base class created with a tuple argument is the same
+        as the input tuple.
         """
         self.assertEqual((1, 2), Base((1, 2)).id)
 
     def test_set_id(self):
         """
-        Test case to ensure that the id attribute of an instance of the Base class created with a set argument is the same as the input set.
+        Test case to ensure that the id attribute of an instance of
+        the Base class created with a set argument is the same
+        as the input set.
         """
         self.assertEqual({1, 2, 3}, Base({1, 2, 3}).id)
 
     def test_frozenset_id(self):
         """
-        Test case to verify that the id attribute of an instance of the Base class created with a frozenset argument is the same as the input frozenset.
+        Test case to verify that the id attribute of an instance of the
+        Base class created with a frozenset argument is the same
+        as the input frozenset.
         """
         self.assertEqual(frozenset({1, 2, 3}), Base(frozenset({1, 2, 3})).id)
 
     def test_range_id(self):
         """
-        Test case to check if the id attribute of an instance of the Base class created with a range argument is the same as the input range.
+        Test case to check if the id attribute of an instance of the
+        Base class created with a range argument is the same
+        as the input range.
         """
         self.assertEqual(range(5), Base(range(5)).id)
 
     def test_bytes_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with a bytes argument is the same as the input bytes.
+        Test case to validate that the id attribute of an instance of the
+        Base class created with a bytes argument is the same
+        as the input bytes.
         """
         self.assertEqual(b'Python', Base(b'Python').id)
 
     def test_bytearray_id(self):
         """
-        Test case to ensure that the id attribute of an instance of the Base class created with a bytearray argument is the same as the input bytearray.
+        Test case to ensure that the id attribute of an instance of the
+        Base class created with a bytearray argument is the same
+        as the input bytearray.
         """
         self.assertEqual(bytearray(b'abcefg'), Base(bytearray(b'abcefg')).id)
 
     def test_memoryview_id(self):
         """
-        Test case to verify that the id attribute of an instance of the Base class created with a memoryview argument is the same as the input memoryview.
+        Test case to verify that the id attribute of an instance of the
+        Base class created with a memoryview argument is the same
+        as the input memoryview.
         """
         self.assertEqual(memoryview(b'abcefg'), Base(memoryview(b'abcefg')).id)
 
     def test_inf_id(self):
         """
-        Test case to check if the id attribute of an instance of the Base class created with float('inf') as an argument is infinity.
+        Test case to check if the id attribute of an instance of the
+        Base class created with float('inf')
+        as an argument is infinity.
         """
         self.assertEqual(float('inf'), Base(float('inf')).id)
 
     def test_NaN_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with float('nan') as an argument is not a number.
+        Test case to validate that the id attribute of
+        an instance of the Base class created with float('nan')
+        as an argument is not a number.
         """
         self.assertNotEqual(float('nan'), Base(float('nan')).id)
 
     def test_two_args(self):
         """
-        Test case to ensure that creating an instance of the Base class with two arguments raises a TypeError.
+        Test case to ensure that creating an instance of the
+        Base class with two arguments raises a TypeError.
         """
         with self.assertRaises(TypeError):
             Base(1, 2)
 
 
 class TestBase_instantiation(unittest.TestCase):
-    """Unit tests for testing instantiation of the Base class."""
+    """
+    Unit tests for testing instantiation of the Base class.
+    """
 
     def test_no_arg(self):
         """
-        Test case to ensure that two instances of the Base class created without any arguments have consecutive id values.
+        Test case to ensure that two instances of the Base class created
+        without any arguments have consecutive id values.
         """
         b1 = Base()
         b2 = Base()
@@ -178,7 +219,8 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_three_bases(self):
         """
-        Test case to verify that three instances of the Base class have consecutive id values.
+        Test case to verify that three instances of the
+        Base class have consecutive id values.
         """
         b1 = Base()
         b2 = Base()
@@ -187,7 +229,8 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_None_id(self):
         """
-        Test case to check if two instances of the Base class created with None as an argument have consecutive id values.
+        Test case to check if two instances of the Base
+        class created with None as an argument have consecutive id values.
         """
         b1 = Base(None)
         b2 = Base(None)
@@ -195,13 +238,15 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_unique_id(self):
         """
-        Test case to validate that an instance of the Base class created with a unique id value returns the same id value.
+        Test case to validate that an instance of the Base
+        class created with a unique id value returns the same id value.
         """
         self.assertEqual(12, Base(12).id)
 
     def test_nb_instances_after_unique_id(self):
         """
-        Test case to verify the number of instances created after an instance of the Base class with a unique id.
+        Test case to verify the number of instances created after
+        an instance of the Base class with a unique id.
         """
         b1 = Base()
         b2 = Base(12)
@@ -210,7 +255,8 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_id_public(self):
         """
-        Test case to check if the id attribute of an instance of the Base class can be modified.
+        Test case to check if the id attribute of an instance of
+        the Base class can be modified.
         """
         b = Base(12)
         b.id = 15
@@ -218,14 +264,17 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_nb_instances_private(self):
         """
-        Test case to confirm that accessing the __nb_instances attribute of the Base class raises an AttributeError.
+        Test case to confirm that accessing the __nb_instances attribute
+        of the Base class raises an AttributeError.
         """
         with self.assertRaises(AttributeError):
             print(Base(12).__nb_instances)
 
     def test_str_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with a string argument is the same as the input string.
+        Test case to validate that the id attribute of an instance of the
+        Base class created with a string argument is the same
+        as the input string.
         """
         self.assertEqual("hello", Base("hello").id)
 
