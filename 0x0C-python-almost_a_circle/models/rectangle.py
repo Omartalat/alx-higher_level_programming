@@ -6,7 +6,9 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Class Rectangle inherits from Base"""
+    """
+    Class Rectangle inherits from Base
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Class constructor"""
@@ -34,10 +36,16 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """
+        width getter
+        """
         return self.__width
 
     @width.setter
     def width(self, width):
+        """
+        width setter
+        """
         if not type(width) is int:
             raise TypeError('width must be an integer')
         if width <= 0:
@@ -46,10 +54,16 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """
+        height getter
+        """
         return self.__height
 
     @height.setter
     def height(self, height):
+        """
+        height setter
+        """
         if not type(height) is int:
             raise TypeError('height must be an integer')
         if height <= 0:
@@ -58,10 +72,16 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """
+        x getter
+        """
         return self.__x
 
     @x.setter
     def x(self, x):
+        """
+        x setter
+        """
         if not type(x) is int:
             raise TypeError('x must be an integer')
         if x < 0:
@@ -70,9 +90,15 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """
+        y getter
+        """
         return self.__y
 
     @y.setter
+    """
+    y setter
+    """
     def y(self, y):
         if not type(y) is int:
             raise TypeError('y must be an integer')
@@ -133,6 +159,9 @@ class Rectangle(Base):
                     setattr(self, k, v)
 
     def to_dictionary(self):
+        """
+        to_dictionary
+        """
         dic = {}
         dic['x'] = self.x
         dic['y'] = self.y
