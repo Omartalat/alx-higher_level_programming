@@ -11,7 +11,9 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Class constructor"""
+        """
+        Class constructor
+        """
         super().__init__(id)
         if not type(width) is int:
             raise TypeError('width must be an integer')
@@ -96,10 +98,10 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    """
-    y setter
-    """
     def y(self, y):
+        """
+        y setter
+        """
         if not type(y) is int:
             raise TypeError('y must be an integer')
         if y < 0:
