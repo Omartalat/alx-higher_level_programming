@@ -280,73 +280,97 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_float_id(self):
         """
-        Test case to verify that the id attribute of an instance of the Base class created with a float argument is the same as the input float.
+        Test case to verify that the id attribute of an instance of the
+        Base class created with a float argument is the same
+        as the input float.
         """
         self.assertEqual(5.5, Base(5.5).id)
 
     def test_complex_id(self):
         """
-        Test case to ensure that the id attribute of an instance of the Base class created with a complex number argument is the same as the input complex number.
+        Test case to ensure that the id attribute of an instance of the
+        Base class created with a complex number argument is the same
+        as the input complex number.
         """
         self.assertEqual(complex(5), Base(complex(5)).id)
 
     def test_dict_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with a dictionary argument is the same as the input dictionary.
+        Test case to validate that the id attribute of an instance of the
+        Base class created with a dictionary argument is the same
+        as the input dictionary.
         """
         self.assertEqual({"a": 1, "b": 2}, Base({"a": 1, "b": 2}).id)
 
     def test_bool_id(self):
         """
-        Test case to verify that the id attribute of an instance of the Base class created with a boolean argument is the same as the input boolean.
+        Test case to verify that the id attribute of an instance of the
+        Base class created with a boolean argument is the same
+        as the input boolean.
         """
         self.assertEqual(True, Base(True).id)
 
     def test_list_id(self):
         """
-        Test case to check if the id attribute of an instance of the Base class created with a list argument is the same as the input list.
+        Test case to check if the id attribute of an instance of the
+        Base class created with a list argument is the same
+        as the input list.
         """
         self.assertEqual([1, 2, 3], Base([1, 2, 3]).id)
 
     def test_tuple_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with a tuple argument is the same as the input tuple.
+        Test case to validate that the id attribute of an instance of the
+        Base class created with a tuple argument is the same
+        as the input tuple.
         """
         self.assertEqual((1, 2), Base((1, 2)).id)
 
     def test_set_id(self):
         """
-        Test case to ensure that the id attribute of an instance of the Base class created with a set argument is the same as the input set.
+        Test case to ensure that the id attribute of an instance of the
+        Base class created with a set argument is the same 
+        as the input set.
         """
         self.assertEqual({1, 2, 3}, Base({1, 2, 3}).id)
 
     def test_frozenset_id(self):
         """
-        Test case to verify that the id attribute of an instance of the Base class created with a frozenset argument is the same as the input frozenset.
+        Test case to verify that the id attribute of an instance of the
+        Base class created with a frozenset argument is the same
+        as the input frozenset.
         """
         self.assertEqual(frozenset({1, 2, 3}), Base(frozenset({1, 2, 3})).id)
 
     def test_range_id(self):
         """
-        Test case to check if the id attribute of an instance of the Base class created with a range argument is the same as the input range.
+        Test case to check if the id attribute of an instance of the
+        Base class created with a range argument is the same
+        as the input range.
         """
         self.assertEqual(range(5), Base(range(5)).id)
 
     def test_bytes_id(self):
         """
-        Test case to validate that the id attribute of an instance of the Base class created with a bytes argument is the same as the input bytes.
+        Test case to validate that the id attribute of an instance of the
+        Base class created with a bytes argument is the same
+        as the input bytes.
         """
         self.assertEqual(b'Python', Base(b'Python').id)
 
     def test_bytearray_id(self):
         """
-        Test case to ensure that the id attribute of an instance of the Base class created with a bytearray argument is the same as the input bytearray.
+        Test case to ensure that the id attribute of an instance of the
+        Base class created with a bytearray argument is the same
+        as the input bytearray.
         """
         self.assertEqual(bytearray(b'abcefg'), Base(bytearray(b'abcefg')).id)
 
     def test_memoryview_id(self):
         """
-        Test case to verify that the id attribute of an instance of the Base class created with a memoryview argument is the same as the input memoryview.
+        Test case to verify that the id attribute of an instance of the
+        Base class created with a memoryview argument is the same
+        as the input memoryview.
         """
         self.assertEqual(memoryview(b'abcefg'), Base(memoryview(b'abcefg')).id)
 
