@@ -68,7 +68,7 @@ class Rectangle:
         else:
             rect_perimeter = 2 * (self.__width + self.__height)
         return rect_perimeter
-    
+
     def __str__(self):
 
         rect_str = ""
