@@ -55,3 +55,4 @@ Please ensure that your contributions align with the repository's goal of provid
 ## License
 
 This repository is licensed under the [MIT License](LICENSE). Feel free to use the code and resources provided for personal and educational purposes.
+
