@@ -6,19 +6,21 @@ states table of hbtn_0e_0_usa where name matches the argument.
 import MySQLdb
 import sys
 
-db = MySQLdb.connect(
+
+if __name__ == "__main__":
+    db = MySQLdb.connect(
         user=sys.argv[1],
         passwd=sys.argv[2],
         db=sys.argv[3],
         host="localhost",
         port=3306
-        )
+    )
 
-cursor = db.cursor()
+    cursor = db.cursor()
 
-cursor.execute('SELECT * FROM states WHERE name = %s', (sys.argv[4],))
+    cursor.execute('SELECT * FROM states WHERE name = %s', (sys.argv[4],))
 
-print(cursor.fetchall())
+    print(cursor.fetchall())
 
-cursor.close()
-db.close()
+    cursor.close()
+    db.close()
