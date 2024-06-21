@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-a script that lists all states from the database hbtn_0e_0_usa
+a script that takes in an argument and displays all values in the
+states table of hbtn_0e_0_usa where name matches the argument.
 """
 import MySQLdb
 import sys
-
 
 db = MySQLdb.connect(
         user=sys.argv[1],
@@ -16,11 +16,9 @@ db = MySQLdb.connect(
 
 cursor = db.cursor()
 
-cursor.execute('SELECT * FROM states ORDER BY id')
+cursor.execute('SELECT * FROM states WHERE name = %s', (sys.argv[4],))
 
-states = cursor.fetchall()
-for state in states:
-    print(state)
+print(cursor.fetchall())
 
 cursor.close()
 db.close()
