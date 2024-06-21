@@ -25,5 +25,10 @@ if __name__ == "__main__":
 
     cities = cursor.fetchall()
 
+    data = []
+
     for city in cities:
-        print(city)
+        if city[2] == sys.argv[4]:
+            data.append(city[1])
+
+    print(', '.join(data))
