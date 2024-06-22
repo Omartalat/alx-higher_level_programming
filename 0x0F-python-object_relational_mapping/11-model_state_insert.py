@@ -21,5 +21,3 @@ if __name__ == '__main__':
     session.commit()
 
     print(state1.id)
-
-    session.close()
