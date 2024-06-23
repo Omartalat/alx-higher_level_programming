@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-
+Script to add a new State object "Louisiana" to the database hbtn_0e_6_usa.
+Takes 3 arguments: mysql username, mysql password, and database name.
+Prints the new state's id after adding it to the database.
 """
 import sys
 from sqlalchemy import create_engine
